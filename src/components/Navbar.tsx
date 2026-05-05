@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import logo from '../assets/vite.svg'
 
 function Navbar(){
     const [ativo, setAtivo] = useState(false);
 
     return <div id='navbar' className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 text-white">
 
-        <img src={"src/assets/vite.svg"} alt="logo" className='cursor-pointer' />
+        <img src={`${logo}`} alt="logo" className='cursor-pointer' />
 
         <div className='flex gap-5 items-center'>
             <button

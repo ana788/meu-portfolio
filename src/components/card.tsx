@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { IoIosArrowDown } from "react-icons/io"
 
 type CardProps = {
@@ -7,12 +6,13 @@ type CardProps = {
     imagem: string
     tags: string[]
     detalhesTecnicos: string[]
+    aberto: boolean
+    onToggle: () => void
 }
 
-function Card ({titulo, descricao, imagem, tags, detalhesTecnicos}: CardProps) {
-    const [aberto, setAberto] = useState(false)
+function Card ({titulo, descricao, imagem, tags, detalhesTecnicos, aberto, onToggle}: CardProps) {
 
-    return <div className="bg-indigo-900 max-w-sm rounded overflow-hidden shadow-lg">
+    return <div className="bg-indigo-900 max-w-sm min-h-[562px] rounded overflow-hidden shadow-lg">
         <img className="w-full" src={imagem} alt="Sunset in the mountains" />
         
         <div className="px-6 py-4">
@@ -34,7 +34,7 @@ function Card ({titulo, descricao, imagem, tags, detalhesTecnicos}: CardProps) {
         </div>
 
         <button 
-            onClick={() => setAberto(!aberto)}
+            onClick={onToggle}
             className="flex justify-between items-center w-full text-white px-6 py-4 cursor-pointer">
             <span>Detalhes Técnicos</span>
             <IoIosArrowDown 
@@ -43,19 +43,19 @@ function Card ({titulo, descricao, imagem, tags, detalhesTecnicos}: CardProps) {
                 }`}/>
         </button>
 
-        {aberto && (
-            <ul className={`mt-3 space-y-2 list-disc list-inside px-6 py-1 overflow-hidden transition-all duration-500 ease-in-out ${
-                aberto
-                    ? "max-h-40 opacity-100 py-2"
-                    : "max-h-0 opacity-0 py-0"
-            }`}>
-                {detalhesTecnicos.map((item, index) => (
+        <ul
+            className={`
+            mt-3 space-y-2 list-disc list-inside px-6 overflow-hidden
+            transition-all duration-500 ease-in-out
+            ${aberto ? "max-h-50 opacity-100 pt-2 pb-6" : "max-h-0 opacity-0 pt-0 pb-0"}
+            `}
+        >
+            {detalhesTecnicos.map((item, index) => (
                 <li key={index} className="text-white text-sm">
                     {item}
                 </li>
-                ))}
-          </ul>
-        )}
+            ))}
+        </ul>
     </div>
 }
 
