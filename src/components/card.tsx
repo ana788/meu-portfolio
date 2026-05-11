@@ -12,51 +12,119 @@ type CardProps = {
 
 function Card ({titulo, descricao, imagem, tags, detalhesTecnicos, aberto, onToggle}: CardProps) {
 
-    return <div className="bg-indigo-900 max-w-sm min-h-[562px] rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={imagem} alt="Sunset in the mountains" />
-        
-        <div className="px-6 py-4">
-            <div className="font-bold text-xl text-white mb-2">{titulo}</div>
-            <p className="text-white text-base ">
-                {descricao}
-            </p>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-            {tags.map((tag, index) => (
-                <span 
-                    key={index}
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                >
-                    #{tag}
-                </span>
-
-            ))}
-        </div>
-
-        <button 
-            onClick={onToggle}
-            className="flex justify-between items-center w-full text-white px-6 py-4 cursor-pointer">
-            <span>Detalhes Técnicos</span>
-            <IoIosArrowDown 
-                className={`transition-transform duration-300 ${
-                    aberto ? "rotate-90" : ""
-                }`}/>
-        </button>
-
-        <ul
-            className={`
-            mt-3 space-y-2 list-disc list-inside px-6 overflow-hidden
-            transition-all duration-500 ease-in-out
-            ${aberto ? "max-h-50 opacity-100 pt-2 pb-6" : "max-h-0 opacity-0 pt-0 pb-0"}
-            `}
+    return (
+        <div
+          className="
+            bg-white/5
+            backdrop-blur-md
+            rounded-[5rem]
+            p-3
+            max-w-sm
+            min-h-[562px]
+            shadow-2xl
+          "
         >
-            {detalhesTecnicos.map((item, index) => (
-                <li key={index} className="text-white text-sm">
-                    {item}
-                </li>
+          
+          {/* Imagem */}
+          <div className="overflow-hidden rounded-[4.2rem]">
+            <img
+              className="
+                w-full
+                h-[300px]
+                object-cover
+              "
+              src={imagem}
+              alt={titulo}
+            />
+          </div>
+      
+          {/* Conteúdo */}
+          <div className="px-3 py-5">
+            <div className="font-bold text-3xl text-white leading-tight mb-2">
+              {titulo}
+            </div>
+      
+            <p className="text-white/70 text-base leading-relaxed">
+              {descricao}
+            </p>
+          </div>
+      
+          {/* Tags */}
+          <div className="px-3 flex flex-wrap gap-2">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="
+                  bg-white/10
+                  border border-white/10
+                  rounded-full
+                  px-3
+                  py-1
+                  text-sm
+                  text-white/80
+                "
+              >
+                #{tag}
+              </span>
             ))}
-        </ul>
-    </div>
+          </div>
+      
+          {/* Botão */}
+          <button
+            onClick={onToggle}
+            className="
+              flex
+              justify-between
+              items-center
+              w-full
+              text-white
+              px-8
+              py-6
+              cursor-pointer
+            "
+          >
+            <span className="text-white/90">
+              Ver detalhes
+            </span>
+      
+            <IoIosArrowDown
+              className={`
+                transition-transform duration-300
+                ${aberto ? "rotate-180" : ""}
+              `}
+            />
+          </button>
+      
+          {/* Dropdown */}
+          <ul
+            className={`
+              space-y-2
+              list-disc
+              list-inside
+              px-6
+              overflow-hidden
+              transition-all
+              duration-500
+              ease-in-out
+      
+              ${
+                aberto
+                  ? "max-h-60 opacity-100 pb-6"
+                  : "max-h-0 opacity-0"
+              }
+            `}
+          >
+            {detalhesTecnicos.map((item, index) => (
+              <li
+                key={index}
+                className="text-white/70 text-sm"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
 }
 
 export default Card

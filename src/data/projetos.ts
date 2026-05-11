@@ -1,41 +1,52 @@
 import cardTop from "../assets/card-top.jpg"
+import cardTop2 from "../assets/paisagem.jpg"
+import imageCoinc from "../assets/login-coinc.png"
+import imagemCoinc2 from "../assets/prints-coinc.png"
+import imagemPdv from "../assets/prints-pdv2.png"
+import imagemWeb from "../assets/prints-web.png"
+import imagemPortfolio from "../assets/prints-portfolio.png"
+import imagemPortfolio2 from "../assets/prints-portfolio2.png"
+import imagemPortfolio3 from "../assets/prints-portfolio3.png"
+import imagemPortfolio4 from "../assets/prints-portfolio4.png"
+
 
 export const projetos = [
     {
         titulo: "Sistema de Gestão Empresarial",
-        descricao: "Sistema web voltado à gestão operacional de empresas, permitindo o gerenciamento de produtos, clientes, fornecedores, tributações e demais processos internos.",
-        imagem: cardTop,
-        tags: ["Java", "Spring", "Angular", "Postgres"],
+        descricao: "Sistema web para gestão empresarial com controle de produtos, clientes, fornecedores e processos internos.",
+        imagem: imagemWeb,
+        tags: ["Java", "Spring", "Angular"],
         detalhesTecnicos: [
             "Controle de acesso granular por perfis e permissões",
             "Arquitetura multi-tenant",
             "Sincronização entre servidores locais e servidor central",
             "Comunicação entre aplicações via APIs HTTP",
-            "Auditoria"
+            "Auditoria",
+            "Postgres"
         ]
     },
 
     {
         titulo: "Sistema de Ponto de Venda (POS)",
-        descricao: "Sistema desktop responsável pelo processo de vendas, integrando produtos, clientes, formas de pagamento e atualização automática de estoque.",
-        imagem: cardTop,
-        tags: ["Java", "Spring", "Angular + Electron", "Redis"],
+        descricao: "Sistema desktop de vendas com integração de produtos, pagamentos e atualização automática de estoque.",
+        imagem: imagemPdv,
+        tags: ["Java", "Spring", "Angular + Electron"],
         detalhesTecnicos: [
             "Implementação de UUID para evitar conflitos entre bases distintas",
             "Soft delete para preservação de histórico de dados",
             "Persistência de vendas em múltiplas tabelas relacionadas",
-            "Aplicação de regras de negócio no fechamento de vendas"
+            "Aplicação de regras de negócio no fechamento de vendas",
+            "Redis"
         ]
     },
 
     {
         titulo: "Sistema de Gestão de Finanças Pessoais",
-        descricao: "Sistema para gerenciar gastos mensais. Mostra onde o dinheiro foi gasto com dados e gráficos. Ajuda a entender hábitos financeiros. Permite definir limites por categoria.",
-        imagem: cardTop,
+        descricao: "Sistema financeiro para controle de gastos mensais com gráficos, categorias e análise de hábitos financeiros.",
+        imagem: imagemCoinc2,
         tags: ["React", "Tailwind", "Node"],
         detalhesTecnicos: [
-            "Desenvolvimento das telas de login e configurações do usuário",
-            "Integração entre frontend e APIs",
+            "Desenvolvimento front end",
             "Interface responsiva e moderna",
             "Estrutura baseada em microsserviços"
         ]
@@ -43,8 +54,8 @@ export const projetos = [
 
     {
         titulo: "Aplicação de Portfólio Pessoal",
-        descricao: "Portfólio web desenvolvido para apresentar projetos, experiências e habilidades profissionais de forma prática e visual, destacando o valor das soluções.",
-        imagem: "src/assets/card-top.jpg",
+        descricao: "Portfólio web criado para apresentar projetos, experiências e habilidades de forma moderna e visual.",
+        imagem: imagemPortfolio4,
         tags: ["React", "Tailwind"],
         detalhesTecnicos: [
             "Componentização",

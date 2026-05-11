@@ -1,6 +1,6 @@
 
 function TecnologiasSection () {
-    return <div className="h-[900px] bg-red-900"></div>
+    return <div id="tecnologias" className="h-[900px] bg-[#212830]"></div>
     
 }
 

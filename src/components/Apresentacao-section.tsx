@@ -7,7 +7,7 @@ const paragrafo = "text-white text-base leading-7"
 
 function ApresentacaoSection(){
 
-    return <section className='relative min-h-screen overflow-hidden bg-[#1e2235] flex justify-center items-center gap-10 px-10'>
+    return <section id="apresentacao" className='relative min-h-screen overflow-hidden bg-[#1e2235] flex justify-center items-center gap-10 px-10'>
 
         {/*Fundo gradiente e glow lilás no canto inferior*/}
         {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0b1635] via-[#191970] to-[#2d1b69]" /> */}
@@ -26,7 +26,13 @@ function ApresentacaoSection(){
             </div>
 
             <div className='flex gap-5 pt-6 '>
-                <button className={`${botaoBase} bg-indigo-400`} >Meus projetos</button>
+                <button 
+                onClick={() => {
+                    document
+                      .getElementById("meus-projetos")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                className={`${botaoBase} bg-indigo-400`} >Meus projetos</button>
                 <button className={`${botaoBase} bg-transparent border-2 border-indigo-400 text-indigo-400`}>Contato</button>
             </div>
 
