@@ -1,14 +1,7 @@
-import cardTop from "../assets/card-top.jpg"
-import cardTop2 from "../assets/paisagem.jpg"
-import imageCoinc from "../assets/login-coinc.png"
 import imagemCoinc2 from "../assets/prints-coinc.png"
 import imagemPdv from "../assets/prints-pdv2.png"
 import imagemWeb from "../assets/prints-web.png"
-import imagemPortfolio from "../assets/prints-portfolio.png"
-import imagemPortfolio2 from "../assets/prints-portfolio2.png"
-import imagemPortfolio3 from "../assets/prints-portfolio3.png"
 import imagemPortfolio4 from "../assets/prints-portfolio4.png"
-
 
 export const projetos = [
     {

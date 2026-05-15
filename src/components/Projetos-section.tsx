@@ -10,7 +10,7 @@ function ProjetosSection () {
         <h2 className="text-5xl text-white font-medium ">Meus Projetos</h2>
 
         <div className="flex justify-center w-full py-8">
-            <div id="cards" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
+            <div id="cards" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
                
                 {projetos.map((projeto, index) => (
                     <Card
