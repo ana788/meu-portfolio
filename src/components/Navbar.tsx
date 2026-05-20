@@ -22,7 +22,7 @@ function Navbar(){
                 <li><a href="#apresentacao" className='hover:text-blue-400 transition cursor-pointer'>Apresentação</a></li>
                 <li><a href="#meus-projetos" className='hover:text-blue-400 transition cursor-pointer'>Projetos</a></li>
                 <li><a href="#tecnologias" className='hover:text-blue-400 transition cursor-pointer'>Tecnologias</a></li>
-                <li><a href="#" className='hover:text-blue-400 transition cursor-pointer'>Contato</a></li>
+                <li><a href="#contato" className='hover:text-blue-400 transition cursor-pointer'>Contato</a></li>
             </ul>
         </div>
         

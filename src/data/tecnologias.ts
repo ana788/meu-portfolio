@@ -17,110 +17,130 @@ import linux_logo from '../assets/Linux.svg'
 import junit_logo from '../assets/JUnit.svg'
 import mockito_logo from '../assets/mockito.svg'
 import docker_logo from '../assets/docker-svgrepo-com.svg'
+import liquibase_logo from '../assets/Liquibase.png'
+import redis_logo from '../assets/Redis.png'
+import mysql_logo from '../assets/MySQL.svg'
 
 export const tecnologias = [
     {
         titulo: "React",
-        subtitulo: "Desenvolvimento front end",
+        categoria: "Frontend",
         imagem: react_logo,
         cor_fundo: "#394D5C"
     },
     {
         titulo: "Tailwind CSS",
-        subtitulo: "Estilização de Interfaces",
+        categoria: "UI Styling",
         imagem: tailwind_logo,
         cor_fundo: "#3E5663"
     },
     {
         titulo: "Angular",
-        subtitulo: "Desenvolvimento Front-end",
+        categoria: "Frontend",
         imagem: angular_logo,
         cor_fundo: "#5A3A4F"
     },
     {
         titulo: "JavaScript",
-        subtitulo: "Desenvolvimento Front-end",
+        categoria: "Frontend",
         imagem: js_logo,
         cor_fundo: "#6A6432"
     },
     {
         titulo: "Java",
-        subtitulo: "Desenvolvimento Back-end",
+        categoria: "Backend",
         imagem: java_logo,
         cor_fundo: "#D9D9D9" //2F4F6A
     },
     {
         titulo: "Spring Framework",
-        subtitulo: "Desenvolvimento Back-end",
+        categoria: "Backend",
         imagem: spring_logo2,
         cor_fundo: "#4E6B3F"
     },
     {
         titulo: "PostgreSQL",
-        subtitulo: "Banco de Dados",
+        categoria: "Banco de Dados",
         imagem: postgres_logo,
         cor_fundo: "#3E5866"
     },
     {
         titulo: "HTML",
-        subtitulo: "Estruturação Web",
+        categoria: "Frontend",
         imagem: html_logo,
         cor_fundo: "#6A4A3E"
     },
     {
         titulo: "CSS",
-        subtitulo: "Estilização de Interfaces",
+        categoria: "Frontend",
         imagem: css_logo,
         cor_fundo: "#3A5667"
     },
     {
         titulo: "Sass",
-        subtitulo: "Estilização de Interfaces",
+        categoria: "UI Styling",
         imagem: sass_logo,
         cor_fundo: "#5A3F4F"
     },
     {
         titulo: "Angular Material",
-        subtitulo: "Estilização de Interfaces",
+        categoria: "UI Styling",
         imagem: angular_material_logo,
         cor_fundo: "#2E3F55"
     },
     {
         titulo: "Materialize",
-        subtitulo: "Estilização de Interfaces",
+        categoria: "UI Styling",
         imagem: materialize_logo,
         cor_fundo: "#6A4749"
     },
     {
         titulo: "Git",
-        subtitulo: "DevOps",
+        categoria: "DevOps",
         imagem: git_logo,
         cor_fundo: "#D9D9D9"
     },
     {
         titulo: "Linux",
-        subtitulo: "DevOps",
+        categoria: "DevOps",
         imagem: linux_logo,
         cor_fundo: "#D9D9D9"
     },
     {
         titulo: "JUnit",
-        subtitulo: "Testes Automatizados",
+        categoria: "Testes",
         imagem: junit_logo,
         cor_fundo: "#41634F"
     },
     {
         titulo: "Mockito",
-        subtitulo: "Testes Automatizados",
+        categoria: "Testes",
         imagem: mockito_logo,
         cor_fundo: "#667045"
     },
     {
         titulo: "Docker",
-        subtitulo: "DevOps",
+        categoria: "DevOps",
         imagem: docker_logo,
         cor_fundo: "#3A5C70"
     },
-
+    {
+        titulo: "MySQL",
+        categoria: "Banco de Dados",
+        imagem: mysql_logo,
+        cor_fundo: "#394D5C"
+    },
+    {
+        titulo: "Liquibase",
+        categoria: "Banco de Dados",
+        imagem: liquibase_logo,
+        cor_fundo: "#6B473D"
+    },
+    {
+        titulo: "Redis",
+        categoria: "Banco de Dados",
+        imagem: redis_logo,
+        cor_fundo: "#653D3A"
+    }
 
 ]

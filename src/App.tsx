@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import ApresentacaoSection from './components/Apresentacao-section'
 import ProjetosSection from './components/Projetos-section'
 import TecnologiasSection from './components/Tecnologias-section'
+import ContatoSection from './components/Contato-section'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <ApresentacaoSection/>
       <ProjetosSection/>
       <TecnologiasSection/>
+      <ContatoSection />
     </>
   )
 }

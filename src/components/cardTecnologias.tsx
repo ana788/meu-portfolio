@@ -1,14 +1,14 @@
 
 type CardTecnologiaProps = {
   titulo: string
-  subtitulo: string
+  categoria: string
   imagem: string
   cor_fundo: string
 }
 
-function CardTecnologias({titulo, subtitulo, imagem, cor_fundo}: CardTecnologiaProps){
+function CardTecnologias({titulo, categoria, imagem, cor_fundo}: CardTecnologiaProps){
     return(
-      <div className="flex bg-white/5 rounded-lg">
+      <div className="flex bg-white/5 rounded-lg min-w-75">
         <div className="h-full flex items-center pl-3 pr-2">
           <div 
             style={{ backgroundColor: cor_fundo }}
@@ -19,7 +19,7 @@ function CardTecnologias({titulo, subtitulo, imagem, cor_fundo}: CardTecnologiaP
 
         <div className="py-4 pl-2 pr-10 flex flex-col justify-between leading-none">
           <div className="text-white font-bold text-xl">{titulo}</div>
-          <p className="text-white/70 text-base">{subtitulo}</p>
+          <p className="text-white/70 text-base">{categoria}</p>
         </div>
 
       </div>   

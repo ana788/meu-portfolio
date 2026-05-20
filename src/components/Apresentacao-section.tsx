@@ -27,13 +27,21 @@ function ApresentacaoSection(){
 
             <div className='flex gap-5 pt-6 '>
                 <button 
-                onClick={() => {
+                    onClick={() => {
                     document
                       .getElementById("meus-projetos")
                       ?.scrollIntoView({ behavior: "smooth" })
-                  }}
-                className={`${botaoBase} bg-indigo-400`} >Meus projetos</button>
-                <button className={`${botaoBase} bg-transparent border-2 border-indigo-400 text-indigo-400`}>Contato</button>
+                    }}
+                    className={`${botaoBase} bg-indigo-400`} >Meus projetos</button>
+                <button 
+                    onClick={() => {
+                        document
+                          .getElementById("contato")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }}
+                    className={`${botaoBase} bg-transparent border-2 border-indigo-400 text-indigo-400`}
+                >   Contato
+                </button>
             </div>
 
         </div>
