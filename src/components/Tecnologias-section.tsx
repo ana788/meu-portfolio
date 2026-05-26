@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Modal from 'react-modal'
 import { tecnologias } from "../data/tecnologias"
 import CardTecnologias from './cardTecnologias'
 import { FaBoltLightning, FaDatabase } from "react-icons/fa6"
@@ -7,6 +8,7 @@ import { GiLips } from "react-icons/gi";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { MdDeveloperMode } from "react-icons/md";
 import { IoIosCloudUpload } from "react-icons/io";
+import React from "react"
 
 const categorias = [
     {
@@ -41,8 +43,13 @@ const categorias = [
 
 ]
 
+Modal.setAppElement('#root');
+
 function TecnologiasSection() {
     const [filtroAtivo, setFiltroAtivo] = useState("Todos")
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [tecnologiaSelecionada, setTecnologiaSelecionada] = useState(null)
 
     const tecnologiasFiltradas =
         filtroAtivo === "Todos"
@@ -50,6 +57,18 @@ function TecnologiasSection() {
             : tecnologias.filter(
                 (tec) => tec.categoria === filtroAtivo
             )
+
+    // Função que abre a modal
+    function abrirModal(tecnologia) {
+        setTecnologiaSelecionada(tecnologia)
+        setIsOpen(true)
+    }
+
+    // Função que fecha a modal
+    function fecharModal() {
+        setTecnologiaSelecionada(null)
+        setIsOpen(false);
+    }
 
     return (
         <div id="tecnologias" className="h-[900px] bg-[#212830] flex flex-col items-center px-10 py-16">
@@ -76,8 +95,6 @@ function TecnologiasSection() {
                             <Icone className="" />
                             <span className="font-medium">{categoria.nome}</span>
 
-                            {/* <Icone className="text-white/40"/>
-                        <span className="text-white/40">{categoria.nome}</span> */}
                         </button>
                     )
 
@@ -88,10 +105,53 @@ function TecnologiasSection() {
                 {tecnologiasFiltradas.map((tec, index) => (
                     <CardTecnologias
                         key={index}
+                        onToggle={() => abrirModal(tec)}
                         {...tec}
                     />
                 ))}
             </div>
+
+
+            {modalIsOpen && (
+                <div 
+                    className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center"
+                    onClick={fecharModal}
+                >
+
+                    <div 
+                        className="bg-[#212830] p-6 rounded-xl w-[500px]"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+
+                        <h2 className="text-indigo-400 text-3xl font-bold">
+                            {tecnologiaSelecionada.titulo}
+                        </h2>
+
+                        <p className="text-gray-300 mt-[0.1rem]">
+                            {tecnologiaSelecionada.categoria}
+                        </p>
+
+                        <ul className="flex flex-col gap-1 list-disc p-5">
+                            <li className="text-gray-300 mt-5"> <span className="font-semibold">Tempo de uso: </span> {tecnologiaSelecionada.tempo_uso} </li>
+                            <li className="text-gray-300"> <span className="font-semibold">Descrição de uso:</span> {tecnologiaSelecionada.descricao_uso} </li>
+                            <li className="text-gray-300"> <span className="font-semibold">Tipo de experiência:</span> {tecnologiaSelecionada.tipo_experiencia} </li>
+                            <li className="text-gray-300"> <span className="font-semibold">Projetos em que foi utilizado:</span> {tecnologiaSelecionada. projeto_utilizado}</li>
+                        </ul>
+
+                        <div className="flex justify-end mt-6"> 
+                            <button
+                            onClick={fecharModal}
+                            className="rounded-2xl py-2 px-4 font-semibold cursor-pointer bg-transparent border-2 border-indigo-400 text-indigo-400"
+                            >
+                                Fechar
+                            </button>
+                        </div>
+                       
+
+                    </div>
+
+                </div>
+            )}
 
 
         </div>

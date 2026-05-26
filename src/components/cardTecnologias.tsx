@@ -4,11 +4,12 @@ type CardTecnologiaProps = {
   categoria: string
   imagem: string
   cor_fundo: string
+  onToggle: () => void
 }
 
-function CardTecnologias({titulo, categoria, imagem, cor_fundo}: CardTecnologiaProps){
+function CardTecnologias({titulo, categoria, imagem, cor_fundo, onToggle}: CardTecnologiaProps){
     return(
-      <div className="flex bg-white/5 rounded-lg min-w-75">
+      <div className="flex bg-white/5 rounded-lg min-w-75 cursor-pointer" onClick={onToggle}>
         <div className="h-full flex items-center pl-3 pr-2">
           <div 
             style={{ backgroundColor: cor_fundo }}
